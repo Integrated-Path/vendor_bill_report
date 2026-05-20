@@ -1,0 +1,186 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* accounting_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260507\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-20 08:49+0000\n"
+"PO-Revision-Date: 2026-05-20 08:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: accounting_module
+#. odoo-python
+#: code:addons/accounting_module/wizard/accounting_report_wizard.py:0
+msgid "'From' date must be before 'To' date."
+msgstr "يجب أن يكون تاريخ \"من\" قبل تاريخ \"إلى\"."
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "<strong>Date from: </strong>"
+msgstr "<strong>التاريخ من: </strong>"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.custom_header_clean
+msgid "<strong>Date: </strong>"
+msgstr "<strong>التاريخ: </strong>"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "<strong>To: </strong>"
+msgstr "<strong>إلى: </strong>"
+
+#. module: accounting_module
+#: model:ir.model,name:accounting_module.model_report_accounting_module_report_vendor_bill_custom
+msgid "Accounting Model for Custom Bill Report"
+msgstr ""
+
+#. module: accounting_module
+#: model:ir.actions.act_window,name:accounting_module.action_accounting_report_wizard
+#: model_terms:ir.ui.view,arch_db:accounting_module.accounting_report_wizard_form
+msgid "Accounting Report"
+msgstr "تقرير حسابات"
+
+#. module: accounting_module
+#: model:ir.model,name:accounting_module.model_accounting_report_wizard
+msgid "Accounting Report Wizard"
+msgstr ""
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.accounting_report_wizard_form
+msgid "All Projects"
+msgstr "كل المشاريع"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.accounting_report_wizard_form
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__create_uid
+#: model:ir.model.fields,field_description:accounting_module.field_report_accounting_module_report_vendor_bill_custom__create_uid
+msgid "Created by"
+msgstr "أُنشئ بواسطة"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__create_date
+#: model:ir.model.fields,field_description:accounting_module.field_report_accounting_module_report_vendor_bill_custom__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: accounting_module
+#: model:ir.actions.report,name:accounting_module.action_report_custom_bills
+msgid "Custom Vendor Bills Report"
+msgstr ""
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.accounting_report_wizard_form
+msgid "Date From"
+msgstr "التاريخ من"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__display_name
+#: model:ir.model.fields,field_description:accounting_module.field_report_accounting_module_report_vendor_bill_custom__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__date_from
+msgid "From"
+msgstr "من"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "Grand Total"
+msgstr "المجموع الكلي"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__id
+#: model:ir.model.fields,field_description:accounting_module.field_report_accounting_module_report_vendor_bill_custom__id
+msgid "ID"
+msgstr ""
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "Label"
+msgstr "البيان"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__write_uid
+#: model:ir.model.fields,field_description:accounting_module.field_report_accounting_module_report_vendor_bill_custom__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__write_date
+#: model:ir.model.fields,field_description:accounting_module.field_report_accounting_module_report_vendor_bill_custom__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: accounting_module
+#: model:ir.model.fields,help:accounting_module.field_accounting_report_wizard__analytic_account_id
+msgid "Leave empty to show all projects with markup"
+msgstr "اتركه فارغاً لإظهار جميع المشاريع"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_report_accounting_module_report_vendor_bill_custom__invoice_line_id
+msgid "Linked Invoice Line"
+msgstr ""
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "No."
+msgstr "ت"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.accounting_report_wizard_form
+msgid "Print PDF"
+msgstr "طباعة PDF"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__analytic_account_id
+msgid "Project / Analytic Account"
+msgstr "المشروع / الحساب التحليلي"
+
+#. module: accounting_module
+#: model:ir.model.fields,field_description:accounting_module.field_accounting_report_wizard__date_to
+msgid "To"
+msgstr "الى"
+
+#. module: accounting_module
+#: model_terms:ir.ui.view,arch_db:accounting_module.report_vendor_bill_custom
+msgid "Total"
+msgstr "المجموع"
+
+#. module: accounting_module
+#: model:ir.ui.menu,name:accounting_module.menu_accounting_report_wizard_global
+msgid "Vendor Bill Report"
+msgstr ""
+
+#. module: accounting_module
+#. odoo-python
+#: code:addons/accounting_module/wizard/accounting_report_wizard.py:0
+msgid "You must choose a project."
+msgstr "يجب اختيار مشروع."

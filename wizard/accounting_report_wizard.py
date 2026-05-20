@@ -37,4 +37,4 @@ class AccountingReportWizard(models.TransientModel):
         if not self.analytic_account_id:
             raise UserError(_("You must choose a project."))
 
-        return self.env.ref('accounting_module.action_report_custom_bills').report_action(self)
+        return self.env.ref('vendor_bill_report.action_report_custom_bills').report_action(self)
