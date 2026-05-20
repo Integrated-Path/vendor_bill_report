@@ -1,0 +1,32 @@
+<odoo>
+    <record id="accounting_report_wizard_form" model="ir.ui.view">
+        <field name="name">accounting.report.wizard.form</field>
+        <field name="model">accounting.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Accounting Report">
+                <field name="analytic_account_id"
+                    placeholder="All Projects"
+                />
+                <field name="date_from" placeholder="Date From" />
+                <field name="date_to" placeholderg="Date To" />
+
+                <footer>
+                    <button name="action_print_button" string="Print PDF" type="object" />
+                    <button string="Cancel" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_accounting_report_wizard" model="ir.actions.act_window">
+        <field name="name">Accounting Report</field>
+        <field name="res_model">accounting.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_accounting_report_wizard_global"
+        name="Vendor Bills Report"
+        parent="account.menu_finance_reports"
+        action="action_accounting_report_wizard"
+        sequence="99"
+    />
+</odoo>

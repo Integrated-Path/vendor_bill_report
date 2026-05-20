@@ -1,0 +1,9 @@
+<odoo>
+    <record id="action_report_custom_bills" model="ir.actions.report">
+        <field name="name">Custom Vendor Bills Report</field>
+        <field name="model">accounting.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">accounting_module.report_vendor_bill_custom</field>
+        <field name="report_file">accounting_module.report_vendor_bill_custom</field>
+    </record>
+</odoo>

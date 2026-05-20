@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_vendor_bill_custom">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page" style="width:100%;">
+                    <div class="col-5 mb-4">
+                        <!-- <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th class="text-center"
+                                        style="background-color: powderblue; width: 35%; vertical-align: middle;">From
+                                        Date</th>
+                                    <td class="text-center"
+                                        style="width: 65%; vertical-align: middle;">
+                                        <span t-field="wizard.date_from" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center"
+                                        style="background-color: powderblue; width: 35%; vertical-align: middle; ">To
+                                        Date</th>
+                                    <td class="text-center" style="vertical-align: middle;">
+                                        <span t-field="wizard.date_to" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table> -->
+                        <div>
+                            <strong>Date from: </strong>
+                            <span t-field="wizard.date_from" />
+                        </div>
+                        <div>
+                            <strong>To: </strong>
+                            <span t-field="wizard.date_to" />
+                        </div>
+                    </div>
+                    <table class="table table-sm"
+                        style="width:100%; border-spacing: 0; table-layout:auto; border-collapse:collapse;">
+                        <!-- <colgroup>
+                            <col style="width:8%" />
+                            <col style="width:20%" />
+                            <col style="width:15%" />
+                            <col style="width:30%" />
+                            <col style="width:27%" />
+                        </colgroup> -->
+                        <t t-set="amount_total" t-value="0" />
+                        <thead>
+                            <tr>
+                                <th class="text-center"
+                                    style="font-weight:bold; white-space: nowrap;">No.</th>
+
+                                <th class="text-center" style="font-weight:bold; white-space: nowrap;">Date</th>
+
+                                <th class="text-center"
+                                    style="font-weight:bold; white-space: nowrap;">Amount</th>
+
+                                <th class="text-center" style="font-weight:bold;">Label</th>
+
+                                <th class="text-center" style="font-weight:bold;">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="line_counter" t-value="1" />
+                            <t t-foreach="docs" t-as="bill">
+                                <t t-foreach="bill.invoice_line_ids" t-as="line">
+                                    <t t-set="amount_total"
+                                        t-value="amount_total + line.price_subtotal" />
+                                    <tr>
+                                        <td class="text-center">
+                                            <span t-esc="line_counter" />
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="bill.invoice_date" />
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.price_subtotal" />
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.name" />
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="bill.ref" />
+                                        </td>
+                                    </tr>
+                                    <t t-set="line_counter" t-value="line_counter + 1" />
+                                </t>
+                            </t>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td style="border:none !important;"></td>
+
+                                <td class="text-center" colspan="1"
+                                    style="font-weight:bold; white-space:nowrap;">
+                                    Total
+                                </td>
+
+                                <td class="text-center">
+                                    <span t-esc="amount_total" />
+                                </td>
+                            </tr>
+
+                            <t
+                                t-if="wizard.analytic_account_id and any(bill.is_cost_plus for bill in docs)">
+                                <tr>
+                                    <td style="border:none !important;"></td>
+                                    <td class="text-center" colspan="1" style="font-weight:bold;"><span
+                                            t-esc="wizard.analytic_account_id.markup_percentage * 100" />
+                                        % </td>
+
+                                    <td class="text-center">
+                                        <span
+                                            t-esc="amount_total * wizard.analytic_account_id.markup_percentage" />
+                                    </td>
+                                </tr>
+                            </t>
+
+                            <tr>
+                                <td style="border:none !important;"></td>
+                                <td class="text-center" colspan="1" style="font-weight:bold; background-color:#ffffcc;">
+                                    Grand Total
+                                </td>
+
+                                <td class="text-center">
+                                    <span
+                                        t-esc="amount_total + (amount_total * wizard.analytic_account_id.markup_percentage)" />
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

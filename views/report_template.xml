@@ -1,0 +1,26 @@
+<odoo>
+    <template id="custom_header_clean" inherit_id="web.external_layout_standard">
+
+        <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
+            <div t-attf-class="header o_company_#{company.id}_layout"
+                style="width:100%; display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid #ccc;">
+                <div>
+                    <img t-if="company.logo"
+                        t-att-src="image_data_uri(company.logo)"
+                        style="max-height:90px;" />
+                </div>
+
+                <div style="font-size: 15px; text-align: right; margin-left: auto;">
+                    <strong>Date: </strong>
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')" />
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'footer')]" position="replace">
+            <div>
+
+            </div>
+        </xpath>
+
+    </template>
+</odoo>
