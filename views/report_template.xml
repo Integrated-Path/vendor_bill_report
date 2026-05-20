@@ -4,7 +4,7 @@
         <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
             <div t-attf-class="header o_company_#{company.id}_layout"
                 style="width:100%; display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid #ccc;">
-                <div>
+                <div style="text-align: left; margin-right: auto;">
                     <img t-if="company.logo"
                         t-att-src="image_data_uri(company.logo)"
                         style="max-height:90px;" />

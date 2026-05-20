@@ -35,7 +35,7 @@
                             <span t-field="wizard.date_to" />
                         </div>
                     </div>
-                    <table class="table table-sm"
+                    <table class="table table-sm table-bordered"
                         style="width:100%; border-spacing: 0; table-layout:auto; border-collapse:collapse;">
                         <!-- <colgroup>
                             <col style="width:8%" />
@@ -50,7 +50,8 @@
                                 <th class="text-center"
                                     style="font-weight:bold; white-space: nowrap;">No.</th>
 
-                                <th class="text-center" style="font-weight:bold; white-space: nowrap;">Date</th>
+                                <th class="text-center"
+                                    style="font-weight:bold; white-space: nowrap;">Date</th>
 
                                 <th class="text-center"
                                     style="font-weight:bold; white-space: nowrap;">Amount</th>
@@ -87,7 +88,7 @@
                                 </t>
                             </t>
                         </tbody>
-                        <tfoot>
+                        <!-- <tfoot>
                             <tr>
                                 <td style="border:none !important;"></td>
 
@@ -127,8 +128,52 @@
                                         t-esc="amount_total + (amount_total * wizard.analytic_account_id.markup_percentage)" />
                                 </td>
                             </tr>
-                        </tfoot>
+                        </tfoot> -->
                     </table>
+                    <div>
+                        <table class="table table-sm table-bordered"
+                            style="width:50%; border-spacing: 0; table-layout:auto; border-collapse:collapse;">
+                            <tfoot>
+                                <tr>
+                                    <td class="text-center" colspan="1"
+                                        style="font-weight:bold; white-space:nowrap;">
+                                        Total
+                                    </td>
+
+                                    <td class="text-center">
+                                        <span t-esc="amount_total" />
+                                    </td>
+                                </tr>
+
+                                <t
+                                    t-if="wizard.analytic_account_id and any(bill.is_cost_plus for bill in docs)">
+                                    <tr>
+                                        <td class="text-center" colspan="1"
+                                            style="font-weight:bold;">commission <span
+                                                t-esc="wizard.analytic_account_id.markup_percentage * 100" />
+                                            % </td>
+
+                                        <td class="text-center">
+                                            <span
+                                                t-esc="amount_total * wizard.analytic_account_id.markup_percentage" />
+                                        </td>
+                                    </tr>
+                                </t>
+
+                                <tr>
+                                    <td class="text-center" colspan="1"
+                                        style="font-weight:bold; background-color:#ffffcc;">
+                                        Grand Total
+                                    </td>
+
+                                    <td class="text-center">
+                                        <span
+                                            t-esc="amount_total + (amount_total * wizard.analytic_account_id.markup_percentage)" />
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
             </t>
         </t>
